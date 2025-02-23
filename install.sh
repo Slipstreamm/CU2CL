@@ -21,7 +21,8 @@ echo "CU2CL: Configuring LLVM/Clang build"
 cmake -DCMAKE_BUILD_TYPE=Release ../llvm-3.4
 ## adjust the argument to -j to suit available cores for speed
 echo "CU2CL: Building LLVM/Clang"
-make -j4
+echo $(nproc)
+make -j$(nproc)
 
 ## Repair a few unlinked header files in this Clang Revision
 echo "CU2CL: Repairing Clang headers"
