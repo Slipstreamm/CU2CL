@@ -27,8 +27,8 @@ jobs:
 
       - name: Package Binary
         run: |
-          mkdir -p release
-          cp cu2cl-build/cu2cl-tool release/
+          mkdir -p ../release
+          cp cu2cl-tool ../release/
 
       - name: Create Release
         if: github.event_name == 'push'
